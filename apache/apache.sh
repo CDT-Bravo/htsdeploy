@@ -13,24 +13,8 @@ echo "[*] Updating package lists..."
 apt-get update
 
 echo "[*] Installing required dependencies"
-# apt-get install nano apache php libapache2-mod-php
-
-# #Set up files
-# echo "[*] Setting up html directory"
-# cp characters.html /var/www/html/characters.html
-# cp characters.json /var/www/html/characters.json
-# cp get_characters.html /var/www/html/get_characters.php     # ALL THIS IS TESTING RN
-# cp index.html /var/www/html/index.html
-# cp save_character.html /var/www/html/save_character.php
-# cp quest.php /var/www/html/quest.php
-
-# #restart apache
-# echo "[*] Restarting apache2"
-# systemctl restart apache2
-
-
 #ONLY REQUIRED IF YOU WANT OLD APACHE
-apt-get install -y git build-essential ufw nano libapr1-dev libaprutil1-dev wget
+apt-get install -y git build-essential ufw nano libapr1-dev libaprutil1-dev wget libpcre3-dev libssl-dev libapache2-mod-php php
 
 #download build file
 echo "[*] Downloading build file"
@@ -41,3 +25,12 @@ cd httpd-2.4.49
 ./configure --enable-so --enable-ssl --enable-cgi --enable-rewrite --with-mpm=event
 make
 make install
+
+echo "[*] Setting up html directory"
+cp characters.html /usr/local/apache2/htdocs/characters.html
+cp characters.json /usr/local/apache2/htdocs/characters.json
+cp get_characters.html /usr/local/apache2/htdocs/get_characters.php
+cp index.html /usr/local/apache2/htdocs/index.html
+cp save_character.html /usr/local/apache2/htdocs/save_character.php
+cp quest.php /usr/local/apache2/htdocs/quest.php
+cp debug.log /usr/local/apache2/htdocs/debug.log
