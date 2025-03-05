@@ -14,7 +14,7 @@ apt-get update
 
 echo "[*] Installing required dependencies"
 #ONLY REQUIRED IF YOU WANT OLD APACHE
-apt-get install -y git build-essential ufw nano libapr1-dev libaprutil1-dev wget libpcre3-dev libssl-dev libapache2-mod-php php
+apt-get install -y git build-essential ufw nano libapr1-dev libaprutil1-dev wget libpcre3-dev libssl-dev #libapache2-mod-php php
 
 #download build file
 echo "[*] Downloading build file"
