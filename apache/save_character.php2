@@ -1,0 +1,50 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$file = 'characters.json';
+
+// Get the incoming POST data (character)
+$data = json_decode(file_get_contents('php://input'), true);
+
+// Check if data is properly received
+if (!$data) {
+    file_put_contents('debug.log', "No data received or invalid JSON\n", FILE_APPEND);
+    echo json_encode(['error' => 'Invalid JSON received']);
+    exit;
+}
+
+// Log the incoming data
+file_put_contents('debug.log', "Received Data: " . print_r($data, true) . "\n", FILE_APPEND);
+
+// Check if the data contains the necessary fields
+if (isset($data['name']) && isset($data['class']) && isset($data['race']) && isset($data['level'])) {
+    if (file_exists($file)) {
+        $characters = json_decode(file_get_contents($file), true);
+        if (json_last_error() != JSON_ERROR_NONE) {
+            file_put_contents('debug.log', "Error reading JSON: " . json_last_error_msg() . "\n", FILE_APPEND);
+            echo json_encode(['error' => 'Error reading JSON from file']);
+            exit;
+        }
+    } else {
+        $characters = [];
+    }
+
+    // Add the new character to the array
+    $characters[] = $data;
+
+    // Try to save the updated characters to the file and check for success
+    $writeSuccess = file_put_contents($file, json_encode($characters, JSON_PRETTY_PRINT));
+
+    if ($writeSuccess !== false) {
+        file_put_contents('debug.log', "Character saved successfully.\n", FILE_APPEND);
+        echo json_encode(['message' => 'Character saved successfully!']);
+    } else {
+        file_put_contents('debug.log', "Failed to save character data.\n", FILE_APPEND);
+        echo json_encode(['error' => 'Failed to save character data.']);
+    }
+} else {
+    file_put_contents('debug.log', "Invalid character data.\n", FILE_APPEND);
+    echo json_encode(['error' => 'Invalid character data.']);
+}
+?>

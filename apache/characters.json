@@ -1,0 +1,32 @@
+[
+    {
+        "name": "test",
+        "class": "test",
+        "race": "test",
+        "level": "1"
+    },
+    {
+        "name": "<script>alert(\"test\");<\/script>",
+        "class": "",
+        "race": "",
+        "level": "1"
+    },
+    {
+        "name": "test",
+        "class": "test",
+        "race": "test",
+        "level": "1"
+    },
+    {
+        "name": "tset",
+        "class": "test",
+        "race": "test",
+        "level": "1"
+    },
+    {
+        "name": "test",
+        "class": "test",
+        "race": "test",
+        "level": "1"
+    }
+]

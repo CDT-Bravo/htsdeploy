@@ -1,0 +1,63 @@
+Received Data: Array
+(
+    [name] => test
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => test
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => <script>alert("test");</script>
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => <script>alert("test");</script>
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => <script>alert("123");</script>
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => </script><script>alert("123");</script>
+    [class] => test
+    [race] => test
+    [level] => 1
+)
+
+Character saved successfully.
+Received Data: Array
+(
+    [name] => </script><script>alert('XSS Attack!');</script>
+    [class] => </script><script>alert('XSS Attack!');</script>
+    [race] => </script><script>alert('XSS Attack!');</script>
+    [level] => 1
+)
+
+Character saved successfully.
