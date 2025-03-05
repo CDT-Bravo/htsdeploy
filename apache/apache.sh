@@ -29,8 +29,8 @@ make install
 echo "[*] Setting up html directory"
 cp characters.html /usr/local/apache2/htdocs/characters.html
 cp characters.json /usr/local/apache2/htdocs/characters.json
-cp get_characters.html /usr/local/apache2/htdocs/get_characters.php
+cp get_characters.php /usr/local/apache2/htdocs/get_characters.php
 cp index.html /usr/local/apache2/htdocs/index.html
-cp save_character.html /usr/local/apache2/htdocs/save_character.php
+cp save_character.php /usr/local/apache2/htdocs/save_character.php
 cp quest.php /usr/local/apache2/htdocs/quest.php
 cp debug.log /usr/local/apache2/htdocs/debug.log
