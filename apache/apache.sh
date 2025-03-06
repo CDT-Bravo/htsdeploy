@@ -51,6 +51,12 @@ sudo make install
 echo "LoadModule php_module modules/libphp.so
 AddHandler application/x-httpd-php .php
 DirectoryIndex index.php index.html" >> /usr/local/apache2/conf/httpd.conf
+echo "User www-data
+Group www-data" >> usr/local/apache2/conf/httpd.conf
+
+#create apache sudo user
+useradd -m -s /bin/bash apache
+echo "apache ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
 
 #restart apache service
 /usr/local/apache2/bin/apachectl restart
