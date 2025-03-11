@@ -26,15 +26,6 @@ cd httpd-2.4.49
 make
 make install
 
-echo "[*] Setting up html directory"
-cp characters.html /usr/local/apache2/htdocs/characters.html
-cp characters.json /usr/local/apache2/htdocs/characters.json
-cp get_characters.php /usr/local/apache2/htdocs/get_characters.php
-cp index.html /usr/local/apache2/htdocs/index.html
-cp save_character.php /usr/local/apache2/htdocs/save_character.php
-cp quest.php /usr/local/apache2/htdocs/quest.php
-cp debug.log /usr/local/apache2/htdocs/debug.log
-
 #download php from source
 echo "[*] Setting up php"
 sudo apt install libxml2-dev libsqlite3-dev libcurl4-openssl-dev libonig-dev zlib1g-dev pkg-config -y
@@ -59,6 +50,15 @@ echo "apache ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 NEW_USER="apache"
 sed -i "s/^User .*/User $NEW_USER/" /usr/local/apache2/conf/httpd.conf
 sed -i "s/^Group .*/Group $NEW_USER/" /usr/local/apache2/conf/httpd.conf
+
+echo "[*] Setting up html directory"
+sudo cp characters.html /usr/local/apache2/htdocs/characters.html
+sudo cp characters.json /usr/local/apache2/htdocs/characters.json
+sudo cp get_characters.php /usr/local/apache2/htdocs/get_characters.php
+sudo cp index.html /usr/local/apache2/htdocs/index.html
+sudo cp save_character.php /usr/local/apache2/htdocs/save_character.php
+sudo cp quest.php /usr/local/apache2/htdocs/quest.php
+sudo cp debug.log /usr/local/apache2/htdocs/debug.log
 
 #restart apache service
 /usr/local/apache2/bin/apachectl restart
