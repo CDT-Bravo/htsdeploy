@@ -27,6 +27,7 @@ case "$HOSTNAME" in
   "forharn")
     USERS=("ranger:gloom-stalker rogue:arcane-trickster sorcerer:wild-magic")
     ADMINS=("VChloras:B3tray3r_Gods ZIlerez:1st_Knight_Avalir")
+    ;;
   *)
     echo "Unknown host. Exiting."
     exit 1
