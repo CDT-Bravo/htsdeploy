@@ -18,7 +18,7 @@ case "$HOSTNAME" in
     ;;
   "fort-arran")
     USERS=("bloodhunter:ghostslayer" "cleric:twilight" "druid:shepherd")
-    ADMIN=("LCoramar:@rchitect_@rcane" "LHollow:Necr0mancy_Thr0ne")
+    ADMINS=("LCoramar:@rchitect_@rcane" "LHollow:Necr0mancy_Thr0ne")
     ;;
   "frothwater")
     USERS=("fighter:champion" "monk:shadow" "paladin:oathbreaker")

@@ -12,10 +12,10 @@ fi
 HOSTNAME=$(hostname)
 
 case $HOSTNAME in
-    :'NANO gives the user sudo privs for nano. Can escape nano and get a root shell this way
-    FIND gives the user sudo privs for find. Can be escaped for a root shell
-    SSH gives the user sudo privs for ssh. Can be escaped for a root shell
-    '
+    #NANO gives the user sudo privs for nano. Can escape nano and get a root shell this way
+    #FIND gives the user sudo privs for find. Can be escaped for a root shell
+    #SSH gives the user sudo privs for ssh. Can be escaped for a root shell
+
     "firetrees")
         NANO="artificer"
         FIND="barbarian"
