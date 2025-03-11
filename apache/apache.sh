@@ -60,7 +60,8 @@ sudo cp save_character.php /usr/local/apache2/htdocs/save_character.php
 sudo cp quest.php /usr/local/apache2/htdocs/quest.php
 sudo cp debug.log /usr/local/apache2/htdocs/debug.log
 
+#remove error message
+echo "ServerName=127.0.0.1" >> /usr/local/apache2/conf/httpd.conf
+
 #restart apache service
 /usr/local/apache2/bin/apachectl restart
-
-
