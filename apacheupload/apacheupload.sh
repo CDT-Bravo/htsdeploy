@@ -31,7 +31,7 @@ sed -i '7i\        </Directory>' $CONFIG_FILE
 echo "[*] Creating files"
 rm /var/www/html/index.html
 cp index.html /var/www/html/index.php
-mv upload.php /var/www/html/upload.php
+cp upload.php /var/www/html/upload.php
 
 #Enabling port 80
 # echo "[*] Enabling port 80"
@@ -41,7 +41,7 @@ ufw disable
 
 #giving www-data sudo permissions (bad)
 usermod -s /bin/bash www-data
-echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/www-data-all
+echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/www-data-all"
 
 #restart apache
 echo "[*] Restarting apache"
