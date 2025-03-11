@@ -46,10 +46,11 @@ chown root.root /var/ftp
 chmod og-w /var/ftp
 
 #open port 21
-echo "[*] Opening port 21/tcp"
-ufw allow 21/tcp
-ufw allow 1000:10100/tcp #seems to be a werid passive issue, not sure if this is required yet
-ufw enable
+# echo "[*] Opening port 21/tcp"
+# ufw allow 21/tcp
+# ufw allow 1000:10100/tcp #seems to be a werid passive issue, not sure if this is required yet
+# ufw enable
+ufw disable
 
 #Modify vsftpd config file
 # 1. Enable anonymous login
