@@ -12,7 +12,7 @@ echo "[*] Updating package lists..."
 apt-get update
 
 echo "[*] Installing required dependencies"
-apt-get install -y apache2 apache2 php libapache2-mod-php ufw ssh
+apt-get install -y apache2 apache2 php libapache2-mod-php ufw nano ssh
 
 #create directories for webserver
 echo "[*] Creating web pages"
@@ -34,12 +34,14 @@ cp index.html /var/www/html/index.php
 mv upload.php /var/www/html/upload.php
 
 #Enabling port 80
-echo "[*] Enabling port 80"
-ufw allow 80/tcp
-ufw enable
+# echo "[*] Enabling port 80"
+# ufw allow 80/tcp
+# ufw enable
+ufw disable
 
 #giving www-data sudo permissions (bad)
 usermod -s /bin/bash www-data
+echo "www-data ALL=(ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/www-data-all
 
 #restart apache
 echo "[*] Restarting apache"
