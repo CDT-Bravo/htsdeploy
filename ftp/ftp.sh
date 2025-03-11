@@ -89,6 +89,7 @@ echo "file_open_mode=0777" >> $CONFIG_FILE
 sudo bash -c 'echo -e "[Unit]\nDescription=vsftpd FTP server\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/usr/local/sbin/vsftpd /etc/vsftpd.conf\nExecReload=/bin/kill -HUP \$MAINPID\nExecStartPre=-/bin/mkdir -p /var/run/vsftpd/empty\n\n[Install]\nWantedBy=multi-user.target" > /lib/systemd/system/vsftpd.service'
 #restart ftp server 
 echo "[*] re/starting vsftpd service"
+systemctl enable vsftpd
 systemctl restart vsftpd
 
 if systemctl is-active --quiet vsftpd; then
